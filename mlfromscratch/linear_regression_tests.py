@@ -4,6 +4,7 @@ from sklearn import datasets
 import matplotlib.pyplot as plt
 
 from linear_regression import LinearRegression
+#from regression import LinearRegression
 
 def mean_squared_error(y_true, y_pred):
     return np.mean((y_true - y_pred)**2)
@@ -15,9 +16,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 #fig = plt.figure(figsize=(8,6))
 #plt.scatter(X[:, 0], y, color = "b", marker = "o", s = 30) 
 #plt.show()
-
-#print(X_train.shape)
-#print(y_train.shape)
 
 regressor = LinearRegression(learning_rate=0.01, n_iters=1000)
 regressor.fit(X_train, y_train)
