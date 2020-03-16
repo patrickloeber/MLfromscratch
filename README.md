@@ -14,3 +14,4 @@ https://www.youtube.com/playlist?list=PLqnslRFeH2Upcrywf-u2etjdxxkL8nl7E
 - Random Forest
 - Principal Component Analysis (PCA)
 - K-Means
+- AdaBoost
