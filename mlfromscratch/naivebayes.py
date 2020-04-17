@@ -12,11 +12,11 @@ class NaiveBayes:
         self._var = np.zeros((n_classes, n_features), dtype=np.float64)
         self._priors =  np.zeros(n_classes, dtype=np.float64)
 
-        for c in self._classes:
+        for idx, c in enumerate(self._classes):
             X_c = X[y==c]
-            self._mean[c, :] = X_c.mean(axis=0)
-            self._var[c, :] = X_c.var(axis=0)
-            self._priors[c] = X_c.shape[0] / float(n_samples)
+            self._mean[idx, :] = X_c.mean(axis=0)
+            self._var[idx, :] = X_c.var(axis=0)
+            self._priors[idx] = X_c.shape[0] / float(n_samples)
 
     def predict(self, X):
         y_pred = [self._predict(x) for x in X]
