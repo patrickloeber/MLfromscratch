@@ -21,7 +21,7 @@ class PCA:
         idxs = np.argsort(eigenvalues)[::-1]
         eigenvalues = eigenvalues[idxs]
         eigenvectors = eigenvectors[idxs]
-        # store firs n eigenvectors
+        # store first n eigenvectors
         self.components = eigenvectors[0:self.n_components]
 
     def transform(self, X):
