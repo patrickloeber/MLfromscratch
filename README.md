@@ -15,3 +15,4 @@ https://www.youtube.com/playlist?list=PLqnslRFeH2Upcrywf-u2etjdxxkL8nl7E
 - Principal Component Analysis (PCA)
 - K-Means
 - AdaBoost
+- Linear Discriminant Analysis (LDA)
