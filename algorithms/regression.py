@@ -1,40 +1,40 @@
 import numpy as np
 
+from .base import BaseAlgorithm
 
-class BaseRegression:
-    def __init__(self, learning_rate=0.001, n_iters=1000):
-        self.lr = learning_rate
+
+class BaseRegression(BaseAlgorithm):
+    def __init__(self, learning_rate: float = 0.001, n_iters: int = 1000):
+        # Assign the variables
+        self.learning_rate = learning_rate
         self.n_iters = n_iters
-        self.weights = None
-        self.bias = None
+
+        # Weights and bias
+        self.weights, self.bias = None, None
 
     def fit(self, X, y):
         n_samples, n_features = X.shape
 
-        # init parameters
-        self.weights = np.zeros(n_features)
-        self.bias = 0
+        self.weights, self.bias = np.zeros(n_features), 0
 
-        # gradient descent
+        # Minimizing loss, and finding the correct Weights and biases using Gradient Descent
         for _ in range(self.n_iters):
             y_predicted = self._approximation(X, self.weights, self.bias)
 
-            # compute gradients
             dw = (1 / n_samples) * np.dot(X.T, (y_predicted - y))
             db = (1 / n_samples) * np.sum(y_predicted - y)
 
-            # update parameters
-            self.weights -= self.lr * dw
-            self.bias -= self.lr * db
+            self.weights -= self.learning_rate * dw
+            self.bias -= self.learning_rate * db
 
     def predict(self, X):
         return self._predict(X, self.weights, self.bias)
 
     def _predict(self, X, w, b):
-        raise NotImplementedError()
+        raise NotImplementedError
 
     def _approximation(self, X, w, b):
-        raise NotImplementedError()
+        raise NotImplementedError
 
 
 class LinearRegression(BaseRegression):
