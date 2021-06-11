@@ -1,6 +1,5 @@
 from collections import Counter
 
-import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import ListedColormap
 from sklearn import datasets

@@ -8,6 +8,7 @@ FILE_NAME = "spambase.data"
 # 1) load with csv file
 with open(FILE_NAME, "r") as f:
     data = list(csv.reader(f, delimiter=","))
+
 data = np.array(data, dtype=np.float32)
 print(data.shape)
 
@@ -24,8 +25,10 @@ print(data.shape)
 # split into X and y
 n_samples, n_features = data.shape
 n_features -= 1
+
 X = data[:, 0:n_features]
 y = data[:, n_features]
+
 print(X.shape, y.shape)
 print(X[0, 0:5])
 # or if y is the first column
@@ -36,6 +39,7 @@ print(X[0, 0:5])
 # na_values = ['---']
 df = pd.read_csv(FILE_NAME, header=None, skiprows=0, dtype=np.float32)
 df = df.fillna(0.0)
+
 # dataframe to numpy
 data = df.to_numpy()
 print(data[4, 0:5])
