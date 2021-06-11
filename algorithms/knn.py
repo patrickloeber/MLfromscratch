@@ -1,5 +1,10 @@
-import numpy as np
 from collections import Counter
+
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from matplotlib.colors import ListedColormap
 
 
 def euclidean_distance(x1, x2):
@@ -28,3 +33,26 @@ class KNN:
         # return the most common class label
         most_common = Counter(k_neighbor_labels).most_common(1)
         return most_common[0][0]
+
+
+# Testing
+cmap = ListedColormap(["#FF0000", "#00FF00", "#0000FF"])
+
+if __name__ == "__main__":
+
+    def accuracy(y_true, y_pred):
+        accuracy = np.sum(y_true == y_pred) / len(y_true)
+        return accuracy
+
+    iris = datasets.load_iris()
+    X, y = iris.data, iris.target
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=1234
+    )
+
+    k = 3
+    clf = KNN(k=k)
+    clf.fit(X_train, y_train)
+    predictions = clf.predict(X_test)
+    print("custom KNN classification accuracy", accuracy(y_test, predictions))

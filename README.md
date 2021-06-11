@@ -25,15 +25,16 @@ This project has 2 dependencies.
 
 - `numpy` for the maths implementation and writing the algorithms
 - `Scikit-learn` for the data generation and testing.
+- `Matplotlib` for the plotting.
 
 You can install these using the command below!
 
 ```sh
 # Linux or MacOS
-pip3 install numpy scikit-learn
+pip3 install numpy scikit-learn matplotlib
 
 # Windows
-pip install numpy scikit-learn
+pip install numpy scikit-learn matplotlib
 ```
 
 ## Watch the Playlist
