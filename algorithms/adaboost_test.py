@@ -4,9 +4,11 @@ from sklearn.model_selection import train_test_split
 
 from adaboost import Adaboost
 
+
 def accuracy(y_true, y_pred):
     accuracy = np.sum(y_true == y_pred) / len(y_true)
     return accuracy
+
 
 data = datasets.load_breast_cancer()
 X = data.data
@@ -22,4 +24,4 @@ clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
 acc = accuracy(y_test, y_pred)
-print ("Accuracy:", acc)
+print("Accuracy:", acc)

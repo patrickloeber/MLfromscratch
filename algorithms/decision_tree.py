@@ -9,8 +9,9 @@ def entropy(y):
 
 
 class Node:
-
-    def __init__(self, feature=None, threshold=None, left=None, right=None, *, value=None):
+    def __init__(
+        self, feature=None, threshold=None, left=None, right=None, *, value=None
+    ):
         self.feature = feature
         self.threshold = threshold
         self.left = left
@@ -22,7 +23,6 @@ class Node:
 
 
 class DecisionTree:
-
     def __init__(self, min_samples_split=2, max_depth=100, n_feats=None):
         self.min_samples_split = min_samples_split
         self.max_depth = max_depth
@@ -41,9 +41,11 @@ class DecisionTree:
         n_labels = len(np.unique(y))
 
         # stopping criteria
-        if (depth >= self.max_depth
-                or n_labels == 1
-                or n_samples < self.min_samples_split):
+        if (
+            depth >= self.max_depth
+            or n_labels == 1
+            or n_samples < self.min_samples_split
+        ):
             leaf_value = self._most_common_label(y)
             return Node(value=leaf_value)
 
@@ -51,11 +53,11 @@ class DecisionTree:
 
         # greedily select the best split according to information gain
         best_feat, best_thresh = self._best_criteria(X, y, feat_idxs)
-        
+
         # grow the children that result from the split
         left_idxs, right_idxs = self._split(X[:, best_feat], best_thresh)
-        left = self._grow_tree(X[left_idxs, :], y[left_idxs], depth+1)
-        right = self._grow_tree(X[right_idxs, :], y[right_idxs], depth+1)
+        left = self._grow_tree(X[left_idxs, :], y[left_idxs], depth + 1)
+        right = self._grow_tree(X[right_idxs, :], y[right_idxs], depth + 1)
         return Node(best_feat, best_thresh, left, right)
 
     def _best_criteria(self, X, y, feat_idxs):

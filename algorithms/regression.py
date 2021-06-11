@@ -2,7 +2,6 @@ import numpy as np
 
 
 class BaseRegression:
-    
     def __init__(self, learning_rate=0.001, n_iters=1000):
         self.lr = learning_rate
         self.n_iters = n_iters
@@ -37,8 +36,8 @@ class BaseRegression:
     def _approximation(self, X, w, b):
         raise NotImplementedError()
 
-class LinearRegression(BaseRegression):
 
+class LinearRegression(BaseRegression):
     def _approximation(self, X, w, b):
         return np.dot(X, w) + b
 
@@ -47,7 +46,6 @@ class LinearRegression(BaseRegression):
 
 
 class LogisticRegression(BaseRegression):
-
     def _approximation(self, X, w, b):
         linear_model = np.dot(X, w) + b
         return self._sigmoid(linear_model)

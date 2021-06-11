@@ -1,7 +1,7 @@
 import numpy as np
 
-class LogisticRegression:
 
+class LogisticRegression:
     def __init__(self, learning_rate=0.001, n_iters=1000):
         self.lr = learning_rate
         self.n_iters = n_iters
@@ -37,4 +37,3 @@ class LogisticRegression:
 
     def _sigmoid(self, x):
         return 1 / (1 + np.exp(-x))
-

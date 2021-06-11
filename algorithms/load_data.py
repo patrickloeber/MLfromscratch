@@ -6,14 +6,14 @@ import pandas as pd
 FILE_NAME = "spambase.data"
 
 # 1) load with csv file
-with open(FILE_NAME, 'r') as f:
+with open(FILE_NAME, "r") as f:
     data = list(csv.reader(f, delimiter=","))
 data = np.array(data, dtype=np.float32)
 print(data.shape)
 
 # 2) load with np.loadtxt()
 # skiprows=1
-data = np.loadtxt(FILE_NAME, delimiter=",",dtype=np.float32)
+data = np.loadtxt(FILE_NAME, delimiter=",", dtype=np.float32)
 print(data.shape, data.dtype)
 
 # 3) load with np.genfromtxt()
@@ -41,5 +41,5 @@ data = df.to_numpy()
 print(data[4, 0:5])
 
 # convert datatypes in numpy
-#data = np.asarray(data, dtype = np.float32)
-#print(data.dtype)
+# data = np.asarray(data, dtype = np.float32)
+# print(data.dtype)

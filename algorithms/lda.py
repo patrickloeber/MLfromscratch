@@ -1,7 +1,7 @@
 import numpy as np
 
-class LDA:
 
+class LDA:
     def __init__(self, n_components):
         self.n_components = n_components
         self.linear_discriminants = None
@@ -41,7 +41,7 @@ class LDA:
         eigenvalues = eigenvalues[idxs]
         eigenvectors = eigenvectors[idxs]
         # store first n eigenvectors
-        self.linear_discriminants = eigenvectors[0:self.n_components]
+        self.linear_discriminants = eigenvectors[0 : self.n_components]
 
     def transform(self, X):
         # project data

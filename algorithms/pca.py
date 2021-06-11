@@ -1,7 +1,7 @@
 import numpy as np
 
-class PCA:
 
+class PCA:
     def __init__(self, n_components):
         self.n_components = n_components
         self.components = None
@@ -22,7 +22,7 @@ class PCA:
         eigenvalues = eigenvalues[idxs]
         eigenvectors = eigenvectors[idxs]
         # store first n eigenvectors
-        self.components = eigenvectors[0:self.n_components]
+        self.components = eigenvectors[0 : self.n_components]
 
     def transform(self, X):
         # project data
