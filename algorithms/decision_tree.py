@@ -125,8 +125,7 @@ if __name__ == "__main__":
         return accuracy
 
     data = datasets.load_breast_cancer()
-    X = data.data
-    y = data.target
+    X, y = data.data, data.target
 
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=1234

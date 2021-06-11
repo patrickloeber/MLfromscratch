@@ -2,6 +2,8 @@ import numpy as np
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 
+from .base import BaseAlgorithm
+
 
 # Decision stump used as weak classifier
 class DecisionStump:
@@ -23,7 +25,7 @@ class DecisionStump:
         return predictions
 
 
-class Adaboost:
+class Adaboost(BaseAlgorithm):
     def __init__(self, n_clf=5):
         self.n_clf = n_clf
 
@@ -34,6 +36,7 @@ class Adaboost:
         w = np.full(n_samples, (1 / n_samples))
 
         self.clfs = []
+
         # Iterate through classifiers
         for _ in range(self.n_clf):
             clf = DecisionStump()
@@ -95,8 +98,7 @@ if __name__ == "__main__":
         return accuracy
 
     data = datasets.load_breast_cancer()
-    X = data.data
-    y = data.target
+    X, y = data.data, data.target
 
     y[y == 0] = -1
 

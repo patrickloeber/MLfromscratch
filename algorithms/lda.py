@@ -53,8 +53,7 @@ class LDA:
 # Testing
 if __name__ == "__main__":
     data = datasets.load_iris()
-    X = data.data
-    y = data.target
+    X, y = data.data, data.target
 
     # Project the data onto the 2 primary linear discriminants
     lda = LDA(2)
@@ -64,8 +63,7 @@ if __name__ == "__main__":
     print("Shape of X:", X.shape)
     print("Shape of transformed X:", X_projected.shape)
 
-    x1 = X_projected[:, 0]
-    x2 = X_projected[:, 1]
+    x1, x2 = X_projected[:, 0], X_projected[:, 1]
 
     plt.scatter(
         x1, x2, c=y, edgecolor="none", alpha=0.8, cmap=plt.cm.get_cmap("viridis", 3)
