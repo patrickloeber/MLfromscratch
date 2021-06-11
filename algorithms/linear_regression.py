@@ -6,6 +6,12 @@ from sklearn import datasets
 from .base import BaseAlgorithm
 
 
+def r2_score(y_true, y_pred):
+    corr_matrix = np.corrcoef(y_true, y_pred)
+    corr = corr_matrix[0, 1]
+    return corr ** 2
+
+
 class LinearRegression(BaseAlgorithm):
     def __init__(self, learning_rate=0.001, n_iters=1000):
         self.lr = learning_rate
@@ -56,6 +62,9 @@ if __name__ == "__main__":
 
     mse = mean_squared_error(y_test, predictions)
     print("MSE:", mse)
+
+    accu = r2_score(y_test, predictions)
+    print("Accuracy:", accu)
 
     y_pred_line = regressor.predict(X)
     cmap = plt.get_cmap("viridis")
