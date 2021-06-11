@@ -1,7 +1,7 @@
 import numpy as np
 
 # Decision stump used as weak classifier
-class DecisionStump:
+# class DecisionStump:
     def __init__(self):
         self.polarity = 1
         self.feature_idx = None

@@ -1,0 +1,10 @@
+.vscode/
+.idea/
+.spyproject/
+
+__pycache__/
+
+.env
+TODO
+
+.DS_STORE
