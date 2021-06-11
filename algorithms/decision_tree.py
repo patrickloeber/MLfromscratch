@@ -4,6 +4,8 @@ import numpy as np
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 
+from .base import BaseAlgorithm
+
 
 def entropy(y):
     hist = np.bincount(y)
@@ -25,7 +27,7 @@ class Node:
         return self.value is not None
 
 
-class DecisionTree:
+class DecisionTree(BaseAlgorithm):
     def __init__(self, min_samples_split=2, max_depth=100, n_feats=None):
         self.min_samples_split = min_samples_split
         self.max_depth = max_depth

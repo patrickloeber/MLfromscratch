@@ -2,16 +2,18 @@ from collections import Counter
 
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.colors import ListedColormap
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
-from matplotlib.colors import ListedColormap
+
+from .base import BaseAlgorithm
 
 
 def euclidean_distance(x1, x2):
     return np.sqrt(np.sum((x1 - x2) ** 2))
 
 
-class KNN:
+class KNN(BaseAlgorithm):
     def __init__(self, k=3):
         self.k = k
 

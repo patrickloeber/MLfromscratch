@@ -1,10 +1,13 @@
+from algorithms.base import BaseAlgorithm
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn import datasets
 
+from .base import BaseAlgorithm
 
-class NaiveBayes:
+
+class NaiveBayes(BaseAlgorithm):
     def fit(self, X, y):
         n_samples, n_features = X.shape
         self._classes = np.unique(y)
