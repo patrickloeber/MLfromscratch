@@ -32,10 +32,10 @@ You can install these using the command below!
 
 ```sh
 # Linux or MacOS
-pip3 install numpy scikit-learn matplotlib pandas
+pip3 install -r requirements.txt
 
 # Windows
-pip install numpy scikit-learn matplotlib pandas
+pip install -r requirements.txt
 ```
 
 You can run the files as following.
@@ -48,6 +48,13 @@ with `<algorithm-file>` being the valid filename of the algorithm without the ex
 
 For example, If I want to run the Linear regression example, I would do 
 `python -m algorithms.linear_regression`
+
+**NOTE**: If you want to use the code for any algorithm, that inherits from `BaseAlgorithm` and play with it,
+You can do so, without inheriting from it. Just remove `(BaseAlgorithm)` from the class. It is intended just
+for Structuring the class and follow a certain rule using `ABCs`.
+
+For example, If you're trying to use Adaboost code standalone, Change the class definition from 
+`class Adaboost(BaseAlgorithm):` to `class Adaboost:` and It will work just fine.
 
 ## Watch the Playlist
 
