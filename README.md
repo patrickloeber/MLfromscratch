@@ -49,13 +49,6 @@ with `<algorithm-file>` being the valid filename of the algorithm without the ex
 For example, If I want to run the Linear regression example, I would do 
 `python -m mlfromscratch.linear_regression`
 
-**NOTE**: If you want to use the code for any algorithm, that inherits from `BaseAlgorithm` and play with it,
-You can do so, without inheriting from it. Just remove `(BaseAlgorithm)` from the class. It is intended just
-for Structuring the class and follow a certain rule using `ABCs`.
-
-For example, If you're trying to use Adaboost code standalone, Change the class definition from 
-`class Adaboost(BaseAlgorithm):` to `class Adaboost:` and It will work just fine.
-
 ## Watch the Playlist
 
 [![Alt text](https://img.youtube.com/vi/ngLyX54e1LU/hqdefault.jpg)](https://www.youtube.com/watch?v=ngLyX54e1LU&list=PLqnslRFeH2Upcrywf-u2etjdxxkL8nl7E)

@@ -2,8 +2,6 @@ import numpy as np
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 
-from .base import BaseAlgorithm
-
 
 # Decision stump used as weak classifier
 class DecisionStump:
@@ -25,7 +23,7 @@ class DecisionStump:
         return predictions
 
 
-class Adaboost(BaseAlgorithm):
+class Adaboost:
     def __init__(self, n_clf=5):
         self.n_clf = n_clf
         self.clfs = []

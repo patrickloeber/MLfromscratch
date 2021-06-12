@@ -36,10 +36,8 @@ class KNN(BaseAlgorithm):
         return most_common[0][0]
 
 
-# Testing
-cmap = ListedColormap(["#FF0000", "#00FF00", "#0000FF"])
-
 if __name__ == "__main__":
+    cmap = ListedColormap(["#FF0000", "#00FF00", "#0000FF"])
 
     def accuracy(y_true, y_pred):
         accuracy = np.sum(y_true == y_pred) / len(y_true)

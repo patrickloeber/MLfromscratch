@@ -3,10 +3,8 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn import datasets
 
-from .base import BaseAlgorithm
 
-
-class Perceptron(BaseAlgorithm):
+class Perceptron:
     def __init__(self, learning_rate=0.01, n_iters=1000):
         self.lr = learning_rate
         self.n_iters = n_iters

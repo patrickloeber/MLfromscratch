@@ -1,9 +1,7 @@
 import numpy as np
 
-from .base import BaseAlgorithm
 
-
-class BaseRegression(BaseAlgorithm):
+class BaseRegression:
     def __init__(self, learning_rate: float = 0.001, n_iters: int = 1000):
         # Assign the variables
         self.learning_rate = learning_rate

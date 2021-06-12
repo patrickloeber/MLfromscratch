@@ -4,7 +4,6 @@ import numpy as np
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 
-from .base import BaseAlgorithm
 from .decision_tree import DecisionTree
 
 
@@ -20,7 +19,7 @@ def most_common_label(y):
     return most_common
 
 
-class RandomForest(BaseAlgorithm):
+class RandomForest:
     def __init__(self, n_trees=10, min_samples_split=2, max_depth=100, n_feats=None):
         self.n_trees = n_trees
         self.min_samples_split = min_samples_split
