@@ -56,4 +56,4 @@ if __name__ == "__main__":
     clf = KNN(k=k)
     clf.fit(X_train, y_train)
     predictions = clf.predict(X_test)
-    print("custom KNN classification accuracy", accuracy(y_test, predictions))
+    print("KNN classification accuracy", accuracy(y_test, predictions))

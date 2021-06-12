@@ -28,6 +28,7 @@ class DecisionStump:
 class Adaboost(BaseAlgorithm):
     def __init__(self, n_clf=5):
         self.n_clf = n_clf
+        self.clfs = []
 
     def fit(self, X, y):
         n_samples, n_features = X.shape
@@ -40,8 +41,8 @@ class Adaboost(BaseAlgorithm):
         # Iterate through classifiers
         for _ in range(self.n_clf):
             clf = DecisionStump()
-
             min_error = float("inf")
+
             # greedy search to find best threshold and feature
             for feature_i in range(n_features):
                 X_column = X[:, feature_i]

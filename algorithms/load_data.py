@@ -2,7 +2,7 @@ import csv
 import numpy as np
 import pandas as pd
 
-# download data from https://archive.ics.uci.edu/ml/datasets/spambase
+# Download data from https://archive.ics.uci.edu/ml/datasets/spambase
 FILE_NAME = "spambase.data"
 
 # 1) load with csv file
