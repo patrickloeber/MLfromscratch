@@ -1,6 +1,4 @@
-import matplotlib.pyplot as plt
 import numpy as np
-from sklearn import datasets
 
 
 class SVM:
@@ -37,6 +35,10 @@ class SVM:
 
 # Testing
 if __name__ == "__main__":
+    # Imports
+    from sklearn import datasets
+    import matplotlib.pyplot as plt
+
     X, y = datasets.make_blobs(
         n_samples=50, n_features=2, centers=2, cluster_std=1.05, random_state=40
     )

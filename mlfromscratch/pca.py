@@ -1,6 +1,4 @@
-import matplotlib.pyplot as plt
 import numpy as np
-from sklearn import datasets
 
 
 class PCA:
@@ -38,6 +36,10 @@ class PCA:
 
 # Testing
 if __name__ == "__main__":
+    # Imports
+    import matplotlib.pyplot as plt
+    from sklearn import datasets
+
     # data = datasets.load_digits()
     data = datasets.load_iris()
     X = data.data

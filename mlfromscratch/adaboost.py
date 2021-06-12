@@ -1,6 +1,4 @@
 import numpy as np
-from sklearn import datasets
-from sklearn.model_selection import train_test_split
 
 
 # Decision stump used as weak classifier
@@ -91,6 +89,9 @@ class Adaboost:
 
 # Testing
 if __name__ == "__main__":
+    # Imports
+    from sklearn import datasets
+    from sklearn.model_selection import train_test_split
 
     def accuracy(y_true, y_pred):
         accuracy = np.sum(y_true == y_pred) / len(y_true)

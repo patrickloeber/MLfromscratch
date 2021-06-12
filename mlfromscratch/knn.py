@@ -1,18 +1,13 @@
 from collections import Counter
 
 import numpy as np
-from matplotlib.colors import ListedColormap
-from sklearn import datasets
-from sklearn.model_selection import train_test_split
-
-from .base import BaseAlgorithm
 
 
 def euclidean_distance(x1, x2):
     return np.sqrt(np.sum((x1 - x2) ** 2))
 
 
-class KNN(BaseAlgorithm):
+class KNN:
     def __init__(self, k=3):
         self.k = k
 
@@ -37,6 +32,11 @@ class KNN(BaseAlgorithm):
 
 
 if __name__ == "__main__":
+    # Imports
+    from matplotlib.colors import ListedColormap
+    from sklearn import datasets
+    from sklearn.model_selection import train_test_split
+
     cmap = ListedColormap(["#FF0000", "#00FF00", "#0000FF"])
 
     def accuracy(y_true, y_pred):

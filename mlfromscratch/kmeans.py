@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.datasets import make_blobs
 
 np.random.seed(42)
 
@@ -103,6 +102,8 @@ class KMeans:
 
 # Testing
 if __name__ == "__main__":
+    from sklearn.datasets import make_blobs
+
     X, y = make_blobs(
         centers=3, n_samples=500, n_features=2, shuffle=True, random_state=40
     )

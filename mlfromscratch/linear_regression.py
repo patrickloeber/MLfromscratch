@@ -1,7 +1,4 @@
-import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn import datasets
 
 
 def r2_score(y_true, y_pred):
@@ -42,6 +39,10 @@ class LinearRegression:
 
 # Testing
 if __name__ == "__main__":
+    # Imports
+    import matplotlib.pyplot as plt
+    from sklearn.model_selection import train_test_split
+    from sklearn import datasets
 
     def mean_squared_error(y_true, y_pred):
         return np.mean((y_true - y_pred) ** 2)

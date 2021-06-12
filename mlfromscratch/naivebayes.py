@@ -1,6 +1,4 @@
 import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn import datasets
 
 
 class NaiveBayes:
@@ -47,6 +45,9 @@ class NaiveBayes:
 
 # Testing
 if __name__ == "__main__":
+    # Imports
+    from sklearn.model_selection import train_test_split
+    from sklearn import datasets
 
     def accuracy(y_true, y_pred):
         accuracy = np.sum(y_true == y_pred) / len(y_true)

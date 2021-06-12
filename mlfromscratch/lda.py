@@ -1,6 +1,4 @@
-import matplotlib.pyplot as plt
 import numpy as np
-from sklearn import datasets
 
 
 class LDA:
@@ -52,6 +50,10 @@ class LDA:
 
 # Testing
 if __name__ == "__main__":
+    # Imports
+    import matplotlib.pyplot as plt
+    from sklearn import datasets
+
     data = datasets.load_iris()
     X, y = data.data, data.target
 
