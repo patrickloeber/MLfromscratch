@@ -47,7 +47,7 @@ python -m algorithms.<algorithm-file>
 with `<algorithm-file>` being the valid filename of the algorithm without the extension.
 
 For example, If I want to run the Linear regression example, I would do 
-`python -m algorithms.linear_regression`
+`python -m mlfromscratch.linear_regression`
 
 **NOTE**: If you want to use the code for any algorithm, that inherits from `BaseAlgorithm` and play with it,
 You can do so, without inheriting from it. Just remove `(BaseAlgorithm)` from the class. It is intended just
