@@ -28,6 +28,10 @@ This project has 2 dependencies.
 - `Matplotlib` for the plotting.
 - `Pandas` for loading data.
 
+**NOTE**: Do note that, Only `numpy` is used for the implementations. Others
+help in the testing of code, and making it easy for us, instead of writing that
+too from scratch.
+
 You can install these using the command below!
 
 ```sh
