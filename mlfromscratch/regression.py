@@ -105,4 +105,4 @@ if __name__ == "__main__":
     regressor.fit(X_train, y_train)
     predictions = regressor.predict(X_test)
 
-    print("LR classification accuracy:", accuracy(y_test, predictions))
+    print("Logistic reg classification accuracy:", accuracy(y_test, predictions))
