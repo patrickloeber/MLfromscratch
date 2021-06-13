@@ -1,7 +1,8 @@
 import numpy as np
 
+
 # Decision stump used as weak classifier
-class DecisionStump():
+class DecisionStump:
     def __init__(self):
         self.polarity = 1
         self.feature_idx = None
@@ -20,10 +21,10 @@ class DecisionStump():
         return predictions
 
 
-class Adaboost():
-
+class Adaboost:
     def __init__(self, n_clf=5):
         self.n_clf = n_clf
+        self.clfs = []
 
     def fit(self, X, y):
         n_samples, n_features = X.shape
@@ -32,11 +33,12 @@ class Adaboost():
         w = np.full(n_samples, (1 / n_samples))
 
         self.clfs = []
+
         # Iterate through classifiers
         for _ in range(self.n_clf):
             clf = DecisionStump()
+            min_error = float("inf")
 
-            min_error = float('inf')
             # greedy search to find best threshold and feature
             for feature_i in range(n_features):
                 X_column = X[:, feature_i]
@@ -83,3 +85,31 @@ class Adaboost():
         y_pred = np.sign(y_pred)
 
         return y_pred
+
+
+# Testing
+if __name__ == "__main__":
+    # Imports
+    from sklearn import datasets
+    from sklearn.model_selection import train_test_split
+
+    def accuracy(y_true, y_pred):
+        accuracy = np.sum(y_true == y_pred) / len(y_true)
+        return accuracy
+
+    data = datasets.load_breast_cancer()
+    X, y = data.data, data.target
+
+    y[y == 0] = -1
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=5
+    )
+
+    # Adaboost classification with 5 weak classifiers
+    clf = Adaboost(n_clf=5)
+    clf.fit(X_train, y_train)
+    y_pred = clf.predict(X_test)
+
+    acc = accuracy(y_test, y_pred)
+    print("Accuracy:", acc)
